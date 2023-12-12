@@ -34,6 +34,14 @@ services:
       - elasticsearch
     networks:
       - network
+  
+  filebeat:
+    container_name: filebeat
+    build: ./Filebeat
+    volumes:
+      - /home/pdelanno/logs:/logs
+    networks:
+      - network
 
 volumes:
   elasticsearch_data:
