@@ -28,12 +28,18 @@ RUN usermod -s /bin/bash elasticsearch
 COPY elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 RUN chmod 777 /etc/elasticsearch/elasticsearch.yml
 
+RUN mkdir /etc/elasticsearch/ssl
+
+COPY gen-cert.sh /usr/share/elasticsearch/gen-cert.sh
+RUN chmod 777 /usr/share/elasticsearch/gen-cert.sh
+RUN /usr/share/elasticsearch/gen-cert.sh
+
+RUN chmod 777 /etc/elasticsearch/ssl/key.pem
+
 USER elasticsearch
 ENV PATH=/usr/share/elasticsearch/bin:$PATH
 
-EXPOSE 9200
+#CMD ["elasticsearch"]
 
-CMD ["elasticsearch"]
-
-#CMD ["tail", "-f", "/dev/null"]
+CMD ["tail", "-f", "/dev/null"]
 #user: team, pw:42berlin

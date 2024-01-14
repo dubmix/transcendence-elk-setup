@@ -15,6 +15,8 @@ COPY logstash.conf /etc/logstash/conf.d/
 
 ENV PATH=/usr/share/logstash/bin:$PATH
 
-CMD ["logstash", "--path.settings=/etc/logstash"]
+RUN mkdir /etc/logstash/ssl
 
-#CMD ["tail", "-f", "/dev/null"]
+#CMD ["logstash", "--path.settings=/etc/logstash"]
+
+CMD ["tail", "-f", "/dev/null"]

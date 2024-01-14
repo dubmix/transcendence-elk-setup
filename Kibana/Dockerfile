@@ -15,5 +15,8 @@ ENV PATH=/usr/share/kibana/bin:$PATH
 
 COPY kibana.yml /etc/kibana/kibana.yml
 
-CMD ["kibana", "--allow-root"]
-#CMD ["tail", "-f", "/dev/null"]
+RUN mkdir /etc/kibana/ssl
+
+#CMD ["kibana", "--allow-root"]
+
+CMD ["tail", "-f", "/dev/null"]

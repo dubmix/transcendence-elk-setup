@@ -17,6 +17,8 @@ COPY filebeat.yml /etc/filebeat/filebeat.yml
 
 RUN mkdir /logs
 
-CMD ["filebeat", "-e", "-c", "/etc/filebeat/filebeat.yml"]
+RUN mkdir /etc/filebeat/ssl
 
-#CMD ["tail", "-f", "/dev/null"]
+#CMD ["filebeat", "-e", "-c", "/etc/filebeat/filebeat.yml"]
+
+CMD ["tail", "-f", "/dev/null"]
