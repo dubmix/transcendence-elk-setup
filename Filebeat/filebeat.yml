@@ -155,13 +155,13 @@ output.logstash:
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
-  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
-  protocol: "https"
+  #protocol: "https"
+  #ssl.certificate_authorities: ["/etc/filebeat/ssl/ca_cert.crt"]
   # Certificate for SSL client authentication
-  ssl.certificate: "/etc/filebeat/ssl/elastic.crt"
+  #ssl.certificate: "/etc/filebeat/ssl/filebeat_cert_signed.crt"
 
   # Client Certificate Key
-  ssl.key: "/etc/filebeat/ssl/key.pem"
+  #ssl.key: "/etc/filebeat/ssl/filebeat_key.pem"
 
 # ================================= Processors =================================
 processors:

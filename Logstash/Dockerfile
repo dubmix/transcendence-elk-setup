@@ -17,6 +17,6 @@ ENV PATH=/usr/share/logstash/bin:$PATH
 
 RUN mkdir /etc/logstash/ssl
 
-#CMD ["logstash", "--path.settings=/etc/logstash"]
+CMD ["logstash", "--path.settings=/etc/logstash"]
 
-CMD ["tail", "-f", "/dev/null"]
+#CMD ["tail", "-f", "/dev/null"]

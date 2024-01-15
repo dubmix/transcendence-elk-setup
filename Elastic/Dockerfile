@@ -19,7 +19,7 @@ RUN apt-get install elasticsearch
 
 WORKDIR /usr/share/elasticsearch/bin
 
-RUN ./elasticsearch-users useradd team -p 42berlin -r superuser
+RUN ./elasticsearch-users useradd team -p 42berlin -r superuser,kibana_system
 
 RUN chown -R elasticsearch:elasticsearch /usr/share/elasticsearch
 RUN usermod -d /usr/share/elasticsearch elasticsearch
@@ -34,12 +34,10 @@ COPY gen-cert.sh /usr/share/elasticsearch/gen-cert.sh
 RUN chmod 777 /usr/share/elasticsearch/gen-cert.sh
 RUN /usr/share/elasticsearch/gen-cert.sh
 
-RUN chmod 777 /etc/elasticsearch/ssl/key.pem
-
 USER elasticsearch
 ENV PATH=/usr/share/elasticsearch/bin:$PATH
 
-#CMD ["elasticsearch"]
+CMD ["elasticsearch"]
 
-CMD ["tail", "-f", "/dev/null"]
+#CMD ["tail", "-f", "/dev/null"]
 #user: team, pw:42berlin
