@@ -35,8 +35,8 @@ server.host: "0.0.0.0"
 # Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively.
 # These settings enable SSL for outgoing requests from the Kibana server to the browser.
 server.ssl.enabled: true
-server.ssl.certificate: /etc/kibana/ssl/kibana_cert_signed.crt
-server.ssl.key: /etc/kibana/ssl/kibana_key.pem
+server.ssl.certificate: /etc/kibana/ssl/localhost_cert.crt
+server.ssl.key: /etc/kibana/ssl/localhost_key.pem
 #server.ssl.certificateAuthorities: ["/etc/kibana/ssl/ca_cert.crt"]
 
 #elasticsearch.hosts: ['https://elasticsearch:9200']
