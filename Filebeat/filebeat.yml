@@ -22,7 +22,7 @@ filebeat.inputs:
 - type: log
 
   # Unique ID among all inputs, an ID is required.
-  id: my-log-id
+  id: log-id
 
   # Change to true to enable this input configuration.
   enabled: true

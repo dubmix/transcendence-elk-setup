@@ -3,6 +3,7 @@ FROM debian:latest
 RUN apt-get update
 RUN apt-get install -y wget
 RUN apt-get install -y gpg
+RUN apt-get install -y vim
 
 RUN wget -qO- https://artifacts.elastic.co/GPG-KEY-elasticsearch | gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
 
@@ -15,8 +16,9 @@ COPY logstash.conf /etc/logstash/conf.d/
 
 ENV PATH=/usr/share/logstash/bin:$PATH
 
+RUN logstash-plugin install logstash-filter-environment
 RUN mkdir /etc/logstash/ssl
 
-CMD ["logstash", "--path.settings=/etc/logstash"]
+CMD ["logstash", "--path.settings=/etc/logstash", "--config.reload.automatic"]
 
 #CMD ["tail", "-f", "/dev/null"]

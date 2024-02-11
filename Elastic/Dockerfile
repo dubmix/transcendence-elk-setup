@@ -11,7 +11,7 @@ RUN apt-get install apt-transport-https
 
 RUN echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | tee /etc/apt/sources.list.d/elastic-8.x.list
 
-RUN echo 'root:1234' | chpasswd
+RUN echo 'root:$ROOT_PW' | chpasswd
 
 RUN mkdir -p /usr/share/elasticsearch
 

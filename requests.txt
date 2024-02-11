@@ -1,0 +1,31 @@
+PUT _index_template/pong_index_template
+{
+  "template": {
+    "settings": {
+      "index": {
+        "lifecycle": {
+          "name": "pong_index_policy",
+          "rollover_alias": "pong"
+        }
+      }
+    }
+  },
+  "index_patterns": [
+    "pong-*"
+  ],
+  "allow_auto_create": false
+}
+
+PUT pong-000001
+{
+  "aliases": {
+    "pong": {
+      "is_write_index": true
+    }
+  }
+}
+
+PUT /your-index/_settings
+{
+  "number_of_replicas": 0
+}

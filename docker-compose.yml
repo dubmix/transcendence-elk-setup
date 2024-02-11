@@ -7,6 +7,8 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    env_file:
+      - .env
     volumes:
       - ssl_data:/etc/elasticsearch/ssl
     restart: always
@@ -32,6 +34,8 @@ services:
     build: ./Logstash
     ports:
       - "5000:5000"
+    env_file:
+      - .env
     environment:
       - ELASTICSEARCH_URL=https://elasticsearch:9200
     depends_on:

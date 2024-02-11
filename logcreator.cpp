@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <unistd.h>
 
 void logMessage(std::string message)
 {
@@ -38,9 +39,13 @@ void logMessage(std::string message)
 }
 int main()
 {
-    logMessage("hello");
-    logMessage("processing");
-    logMessage("done");
-    logMessage("");
+    while(true)
+    {
+    	logMessage("hello");
+    	logMessage("processing");
+    	logMessage("done");
+    	logMessage("");
+    	sleep(1);
+    }
     return 0;
 }
