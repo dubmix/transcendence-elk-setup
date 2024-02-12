@@ -18,7 +18,6 @@ chmod 777 $SSL_PATH/elastic_key.pem
 openssl req -new -key $SSL_PATH/elastic_key.pem -out $SSL_PATH/elastic_csr.crt -subj "/C=DE/L=Berlin/O=42School/CN=elasticsearch"
 openssl x509 -req -in $SSL_PATH/elastic_csr.crt -CA $SSL_PATH/ca_cert.crt -CAkey $SSL_PATH/ca_private_key.pem -days 365 -out $SSL_PATH/elastic_cert_signed.crt
 
-
 #logstash
 openssl genpkey -algorithm RSA -out $SSL_PATH/logstash_key.pem
 chmod 777 $SSL_PATH/logstash_key.pem
