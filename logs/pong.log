@@ -1,0 +1,88 @@
+2024-03-20 09:12:42,492 - webSocket_msg_create.py - INFO - Setting player name Player1
+2024-03-20 09:12:42,492 - webSocket_msg_create.py - INFO - Setting player name Player1
+2024-03-20 09:12:42,492 - webSocket_msg_create.py - INFO - Setting player name Player1
+2024-03-20 09:12:42,516 - webSocket_msg_create.py - INFO - Setting player name Player2
+2024-03-20 09:12:42,516 - webSocket_msg_create.py - INFO - Setting player name Player2
+2024-03-20 09:12:42,516 - webSocket_msg_create.py - INFO - Setting player name Player2
+2024-03-20 09:12:42,517 - webSocket_msg_create.py - WARNING - Match start for players Player1, Player2
+2024-03-20 09:12:42,517 - webSocket_msg_create.py - WARNING - Match start for players Player1, Player2
+2024-03-20 09:12:42,517 - webSocket_msg_create.py - WARNING - Match start for players Player1, Player2
+2024-03-20 09:12:42,541 - consumers.py - DEBUG - Game is paused
+2024-03-20 09:12:42,541 - consumers.py - DEBUG - Game is paused
+2024-03-20 09:12:42,541 - consumers.py - DEBUG - Game is paused
+2024-03-20 09:12:46,609 - consumers.py - DEBUG - Game is resumed
+2024-03-20 09:12:46,609 - consumers.py - DEBUG - Game is resumed
+2024-03-20 09:12:46,609 - consumers.py - DEBUG - Game is resumed
+2024-03-20 09:12:48,073 - webSocket_msg_create.py - INFO - Score updated to Player1, 1 - Player2, 0
+2024-03-20 09:12:48,073 - webSocket_msg_create.py - INFO - Score updated to Player1, 1 - Player2, 0
+2024-03-20 09:12:48,073 - webSocket_msg_create.py - INFO - Score updated to Player1, 1 - Player2, 0
+2024-03-20 09:12:54,009 - webSocket_msg_create.py - INFO - Score updated to Player1, 1 - Player2, 1
+2024-03-20 09:12:54,009 - webSocket_msg_create.py - INFO - Score updated to Player1, 1 - Player2, 1
+2024-03-20 09:12:54,009 - webSocket_msg_create.py - INFO - Score updated to Player1, 1 - Player2, 1
+2024-03-20 09:12:59,787 - webSocket_msg_create.py - INFO - Score updated to Player1, 2 - Player2, 1
+2024-03-20 09:12:59,787 - webSocket_msg_create.py - INFO - Score updated to Player1, 2 - Player2, 1
+2024-03-20 09:12:59,787 - webSocket_msg_create.py - INFO - Score updated to Player1, 2 - Player2, 1
+2024-03-20 09:13:01,199 - webSocket_msg_create.py - INFO - Score updated to Player1, 3 - Player2, 1
+2024-03-20 09:13:01,199 - webSocket_msg_create.py - INFO - Score updated to Player1, 3 - Player2, 1
+2024-03-20 09:13:01,199 - webSocket_msg_create.py - INFO - Score updated to Player1, 3 - Player2, 1
+2024-03-20 09:13:02,784 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 1
+2024-03-20 09:13:02,784 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 1
+2024-03-20 09:13:02,784 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 1
+2024-03-20 09:13:04,211 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 2
+2024-03-20 09:13:04,211 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 2
+2024-03-20 09:13:04,211 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 2
+2024-03-20 09:13:09,987 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 3
+2024-03-20 09:13:09,987 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 3
+2024-03-20 09:13:09,987 - webSocket_msg_create.py - INFO - Score updated to Player1, 4 - Player2, 3
+2024-03-20 09:13:11,565 - webSocket_msg_create.py - INFO - Score updated to Player1, 5 - Player2, 3
+2024-03-20 09:13:11,565 - webSocket_msg_create.py - INFO - Score updated to Player1, 5 - Player2, 3
+2024-03-20 09:13:11,565 - webSocket_msg_create.py - INFO - Score updated to Player1, 5 - Player2, 3
+2024-03-20 09:13:21,501 - webSocket_msg_create.py - INFO - Score updated to Player1, 6 - Player2, 3
+2024-03-20 09:13:21,501 - webSocket_msg_create.py - INFO - Score updated to Player1, 6 - Player2, 3
+2024-03-20 09:13:21,501 - webSocket_msg_create.py - INFO - Score updated to Player1, 6 - Player2, 3
+2024-03-20 09:13:22,880 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 3
+2024-03-20 09:13:22,880 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 3
+2024-03-20 09:13:22,880 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 3
+2024-03-20 09:13:41,280 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 4
+2024-03-20 09:13:41,280 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 4
+2024-03-20 09:13:41,280 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 4
+2024-03-20 09:13:47,160 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 5
+2024-03-20 09:13:47,160 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 5
+2024-03-20 09:13:47,160 - webSocket_msg_create.py - INFO - Score updated to Player1, 7 - Player2, 5
+2024-03-20 09:13:53,029 - webSocket_msg_create.py - INFO - Score updated to Player1, 8 - Player2, 5
+2024-03-20 09:13:53,029 - webSocket_msg_create.py - INFO - Score updated to Player1, 8 - Player2, 5
+2024-03-20 09:13:53,029 - webSocket_msg_create.py - INFO - Score updated to Player1, 8 - Player2, 5
+2024-03-20 09:13:54,632 - webSocket_msg_create.py - INFO - Score updated to Player1, 9 - Player2, 5
+2024-03-20 09:13:54,632 - webSocket_msg_create.py - INFO - Score updated to Player1, 9 - Player2, 5
+2024-03-20 09:13:54,632 - webSocket_msg_create.py - INFO - Score updated to Player1, 9 - Player2, 5
+2024-03-20 09:14:00,031 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 5
+2024-03-20 09:14:00,031 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 5
+2024-03-20 09:14:00,031 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 5
+2024-03-20 09:14:01,637 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 6
+2024-03-20 09:14:01,637 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 6
+2024-03-20 09:14:01,637 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 6
+2024-03-20 09:14:03,158 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 7
+2024-03-20 09:14:03,158 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 7
+2024-03-20 09:14:03,158 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 7
+2024-03-20 09:14:08,856 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 8
+2024-03-20 09:14:08,856 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 8
+2024-03-20 09:14:08,856 - webSocket_msg_create.py - INFO - Score updated to Player1, 10 - Player2, 8
+2024-03-20 09:14:10,443 - webSocket_msg_create.py - INFO - Score updated to Player1, 11 - Player2, 8
+2024-03-20 09:14:10,443 - webSocket_msg_create.py - INFO - Score updated to Player1, 11 - Player2, 8
+2024-03-20 09:14:10,443 - webSocket_msg_create.py - INFO - Score updated to Player1, 11 - Player2, 8
+2024-03-20 09:14:10,457 - webSocket_msg_create.py - INFO - Match end for players Player1, Player2
+2024-03-20 09:14:10,457 - webSocket_msg_create.py - INFO - Match end for players Player1, Player2
+2024-03-20 09:14:10,457 - webSocket_msg_create.py - INFO - Match end for players Player1, Player2
+2024-03-20 09:14:10,458 - webSocket_msg_create.py - INFO - Score updated to Player1, 11 - Player2, 8
+2024-03-20 09:14:10,458 - webSocket_msg_create.py - INFO - Score updated to Player1, 11 - Player2, 8
+2024-03-20 09:14:10,458 - webSocket_msg_create.py - INFO - Score updated to Player1, 11 - Player2, 8
+2024-03-20 09:14:10,459 - webSocket_msg_create.py - WARNING - Player Player1 won the game
+2024-03-20 09:14:10,459 - webSocket_msg_create.py - WARNING - Player Player1 won the game
+2024-03-20 09:14:10,459 - webSocket_msg_create.py - WARNING - Player Player1 won the game
+2024-03-20 09:14:10,820 - consumers.py - WARNING - Player Player2 disconnected from the game
+2024-03-20 09:14:10,820 - consumers.py - WARNING - Player Player2 disconnected from the game
+2024-03-20 09:14:10,820 - consumers.py - WARNING - Player Player2 disconnected from the game
+2024-03-20 09:14:10,821 - consumers.py - WARNING - Player Player1 disconnected from the game
+2024-03-20 09:14:10,821 - consumers.py - WARNING - Player Player1 disconnected from the game
+2024-03-20 09:14:10,821 - consumers.py - WARNING - Player Player1 disconnected from the game
+2024-03-20 09:14:10,821 - consumers.py - WARNING - Player Player1 disconnected from the game

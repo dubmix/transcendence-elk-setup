@@ -1,0 +1,63 @@
+INFO 2024-03-20 09:10:00,897 autoreload Watching for file changes with StatReloader
+DEBUG 2024-03-20 09:10:00,902 autoreload Waiting for apps ready_event.
+DEBUG 2024-03-20 09:10:00,917 autoreload Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2024-03-20 09:10:00,955 autoreload Watching dir /transcendence/pong/templates with glob **/*.
+DEBUG 2024-03-20 09:10:00,959 autoreload Watching dir /transcendence/locale with glob **/*.mo.
+DEBUG 2024-03-20 09:10:00,960 autoreload Watching dir /usr/local/lib/python3.12/site-packages/daphne/locale with glob **/*.mo.
+DEBUG 2024-03-20 09:10:00,961 autoreload Watching dir /usr/local/lib/python3.12/site-packages/corsheaders/locale with glob **/*.mo.
+DEBUG 2024-03-20 09:10:00,962 autoreload Watching dir /usr/local/lib/python3.12/site-packages/channels/locale with glob **/*.mo.
+DEBUG 2024-03-20 09:10:00,962 autoreload Watching dir /transcendence/pong/locale with glob **/*.mo.
+DEBUG 2024-03-20 09:10:01,036 utils (0.007) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+DEBUG 2024-03-20 09:10:01,047 utils (0.001) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+DEBUG 2024-03-20 09:10:01,051 runserver Daphne running, listening on 127.0.0.1:8000
+INFO 2024-03-20 09:11:56,283 runserver HTTP GET /dashboardPlayerList 301 [0.09, 127.0.0.1:49110]
+INFO 2024-03-20 09:11:56,287 runserver HTTP GET /dashboardMatches 301 [0.09, 127.0.0.1:49092]
+INFO 2024-03-20 09:11:56,292 runserver HTTP GET /dashboardTournaments 301 [0.10, 127.0.0.1:49108]
+DEBUG 2024-03-20 09:11:56,447 utils (0.003) SELECT DISTINCT "pong_gamedata"."player1_name" FROM "pong_gamedata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,447 utils (0.004) SELECT "pong_gamedata"."id", "pong_gamedata"."player1_name", "pong_gamedata"."player1_points", "pong_gamedata"."player2_name", "pong_gamedata"."player2_points", "pong_gamedata"."game_end_timestamp", "pong_gamedata"."game_duration_secs", "pong_gamedata"."is_tournament_game" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,449 utils (0.005) SELECT "pong_tournamentdata"."id", "pong_tournamentdata"."tour_id", "pong_tournamentdata"."match_id_semi_1", "pong_tournamentdata"."match_id_semi_2", "pong_tournamentdata"."match_id_final", "pong_tournamentdata"."tournament_end_timestamp", "pong_tournamentdata"."tournament_duration_secs", "pong_tournamentdata"."player_ranking", "pong_tournamentdata"."blockchain_hash" FROM "pong_tournamentdata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,449 utils (0.001) SELECT DISTINCT "pong_gamedata"."player2_name" FROM "pong_gamedata"; args=(); alias=default
+INFO 2024-03-20 09:11:56,458 runserver HTTP GET /dashboardPlayerList/ 200 [0.13, 127.0.0.1:49116]
+DEBUG 2024-03-20 09:11:56,475 utils (0.020) SELECT EXTRACT(DOW FROM "pong_gamedata"."game_end_timestamp" AT TIME ZONE 'UTC') + 1 AS "day_of_week", COUNT("pong_gamedata"."id") AS "total_games" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game" GROUP BY 1 ORDER BY 1 ASC; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,475 utils (0.021) SELECT EXTRACT(DOW FROM "pong_tournamentdata"."tournament_end_timestamp" AT TIME ZONE 'UTC') + 1 AS "day_of_week", COUNT("pong_tournamentdata"."id") AS "total_games" FROM "pong_tournamentdata" GROUP BY 1 ORDER BY 1 ASC; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,479 utils (0.001) SELECT ("pong_tournamentdata"."tournament_end_timestamp" AT TIME ZONE 'UTC')::date AS "tournament_end_timestamp__date", SUM("pong_tournamentdata"."tournament_duration_secs") AS "total_duration" FROM "pong_tournamentdata" GROUP BY 1; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,479 utils (0.003) SELECT ("pong_gamedata"."game_end_timestamp" AT TIME ZONE 'UTC')::date AS "game_end_timestamp__date", SUM("pong_gamedata"."game_duration_secs") AS "total_duration" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game" GROUP BY 1; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,481 utils (0.001) SELECT ("pong_tournamentdata"."tournament_end_timestamp" AT TIME ZONE 'UTC')::date, "pong_tournamentdata"."tournament_duration_secs" FROM "pong_tournamentdata"; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,484 utils (0.001) SELECT ("pong_gamedata"."game_end_timestamp" AT TIME ZONE 'UTC')::date, "pong_gamedata"."game_duration_secs" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game"; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,491 utils (0.004) SELECT ("pong_tournamentdata"."tournament_end_timestamp" AT TIME ZONE 'UTC')::date AS "tournament_end_timestamp__date", AVG("pong_tournamentdata"."tournament_duration_secs") AS "avg_duration" FROM "pong_tournamentdata" GROUP BY 1; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,492 utils (0.001) SELECT ("pong_gamedata"."game_end_timestamp" AT TIME ZONE 'UTC')::date AS "game_end_timestamp__date", AVG("pong_gamedata"."game_duration_secs") AS "avg_duration" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game" GROUP BY 1; args=('UTC',); alias=default
+DEBUG 2024-03-20 09:11:56,493 utils (0.001) SELECT "pong_tournamentdata"."player_ranking" FROM "pong_tournamentdata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,497 utils (0.003) SELECT DISTINCT "pong_gamedata"."player1_name" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,497 utils (0.001) SELECT SUM("pong_tournamentdata"."tournament_duration_secs") AS "total_match_time" FROM "pong_tournamentdata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,499 utils (0.001) SELECT DISTINCT "pong_gamedata"."player2_name" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,501 utils (0.001) SELECT SUM("pong_gamedata"."game_duration_secs") AS "total_match_time" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,503 utils (0.003) SELECT MAX("pong_tournamentdata"."tournament_duration_secs") AS "longest_match_time" FROM "pong_tournamentdata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,504 utils (0.001) SELECT MAX("pong_gamedata"."game_duration_secs") AS "longest_match_time" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,504 utils (0.000) SELECT "pong_tournamentdata"."player_ranking" FROM "pong_tournamentdata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,508 utils (0.001) SELECT "pong_tournamentdata"."player_ranking", "pong_tournamentdata"."tournament_duration_secs" AS "total_time" FROM "pong_tournamentdata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,509 utils (0.003) SELECT CASE WHEN "pong_gamedata"."player1_points" > ("pong_gamedata"."player2_points") THEN "pong_gamedata"."player1_name" WHEN "pong_gamedata"."player2_points" > ("pong_gamedata"."player1_points") THEN "pong_gamedata"."player2_name" ELSE NULL END AS "winner_name" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,509 utils (0.001) SELECT "pong_tournamentdata"."id", "pong_tournamentdata"."tour_id", "pong_tournamentdata"."match_id_semi_1", "pong_tournamentdata"."match_id_semi_2", "pong_tournamentdata"."match_id_final", "pong_tournamentdata"."tournament_end_timestamp", "pong_tournamentdata"."tournament_duration_secs", "pong_tournamentdata"."player_ranking", "pong_tournamentdata"."blockchain_hash" FROM "pong_tournamentdata"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,512 utils (0.002) SELECT "pong_gamedata"."player1_name", SUM("pong_gamedata"."game_duration_secs") AS "total_time" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game" GROUP BY "pong_gamedata"."player1_name"; args=(); alias=default
+DEBUG 2024-03-20 09:11:56,514 utils (0.001) SELECT "pong_gamedata"."player2_name", SUM("pong_gamedata"."game_duration_secs") AS "total_time" FROM "pong_gamedata" WHERE NOT "pong_gamedata"."is_tournament_game" GROUP BY "pong_gamedata"."player2_name"; args=(); alias=default
+INFO 2024-03-20 09:11:56,517 runserver HTTP GET /dashboardTournaments/ 200 [0.18, 127.0.0.1:49132]
+INFO 2024-03-20 09:11:56,522 runserver HTTP GET /dashboardMatches/ 200 [0.19, 127.0.0.1:49120]
+INFO 2024-03-20 09:12:42,490 runserver WebSocket HANDSHAKING /ws/play/match/Player1/ [127.0.0.1:40528]
+INFO 2024-03-20 09:12:42,492 runserver WebSocket CONNECT /ws/play/match/Player1/ [127.0.0.1:40528]
+INFO 2024-03-20 09:12:42,514 runserver WebSocket HANDSHAKING /ws/play/match/Player2/ [127.0.0.1:40536]
+INFO 2024-03-20 09:12:42,516 runserver WebSocket CONNECT /ws/play/match/Player2/ [127.0.0.1:40536]
+DEBUG 2024-03-20 09:14:10,815 utils (0.009) INSERT INTO "pong_gamedata" ("player1_name", "player1_points", "player2_name", "player2_points", "game_end_timestamp", "game_duration_secs", "is_tournament_game") VALUES ('Player1', 11, 'Player2', 8, '2024-03-20T11:14:10.457133+01:00'::timestamptz, 87, false) RETURNING "pong_gamedata"."id"; args=('Player1', 11, 'Player2', 8, datetime.datetime(2024, 3, 20, 11, 14, 10, 457133, tzinfo=<DstTzInfo 'Europe/Paris' CET+1:00:00 STD>), 87, False); alias=default
+INFO 2024-03-20 09:14:10,818 runserver WebSocket DISCONNECT /ws/play/match/Player2/ [127.0.0.1:40536]
