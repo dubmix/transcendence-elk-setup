@@ -1,0 +1,30 @@
+# These JSON requests can be used in the console of the Elastic dev tools section
+
+# For the policy
+{
+  "index": {
+    "lifecycle": {
+      "name": "pong-index-policy",
+        "rollover_alias": "pong"
+    },
+    "number_of_replicas": 0
+  }
+}
+
+# For the first index
+PUT pong-000001
+{
+  "aliases": {
+    "pong": {
+      "is_write_index": true
+    }
+  }
+}
+
+# Change health from `yellow` to `green` when using one node 
+PUT pong-000002/_settings
+{
+    "index": {
+        "number_of_replicas": 0
+    }
+}

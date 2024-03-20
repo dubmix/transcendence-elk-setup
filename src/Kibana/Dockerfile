@@ -9,16 +9,13 @@ RUN wget -qO- https://artifacts.elastic.co/GPG-KEY-elasticsearch | gpg --dearmor
 RUN echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | tee /etc/apt/sources.list.d/elastic-8.x.list
 
 RUN apt-get update
-RUN apt-get install -y filebeat
+RUN apt-get install -y kibana
 
-ENV PATH=/usr/share/filebeat/bin:$PATH
+ENV PATH=/usr/share/kibana/bin:$PATH
 
-COPY filebeat.yml /etc/filebeat/filebeat.yml
+COPY kibana.yml /etc/kibana/kibana.yml
 
-RUN mkdir /logs
+RUN mkdir /etc/kibana/ssl
+RUN mkdir /etc/kibana/certs
 
-RUN mkdir /etc/filebeat/ssl
-
-CMD ["filebeat", "-e", "-c", "/etc/filebeat/filebeat.yml"]
-
-#CMD ["tail", "-f", "/dev/null"]
+CMD ["kibana", "--allow-root"]

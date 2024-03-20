@@ -3,7 +3,7 @@ version: '3'
 services:
   elasticsearch:
     container_name: elasticsearch
-    build: ./Elastic
+    build: ./src/Elastic
     env_file:
       - .env
     ports:
@@ -17,7 +17,7 @@ services:
       
   kibana:
     container_name: kibana
-    build: ./Kibana
+    build: ./src/Kibana
     ports:
       - "9400:9400"
     environment:
@@ -31,7 +31,7 @@ services:
 
   logstash:
     container_name: logstash
-    build: ./Logstash
+    build: ./src/Logstash
     ports:
       - "9500:9500"
     env_file:
@@ -47,9 +47,9 @@ services:
   
   filebeat:
     container_name: filebeat
-    build: ./Filebeat
+    build: ./src/Filebeat
     volumes:
-      - ${HOME}/logs:/logs
+      - ./logs:/logs
       - ssl_data:/etc/filebeat/ssl
     depends_on:
       - elasticsearch
